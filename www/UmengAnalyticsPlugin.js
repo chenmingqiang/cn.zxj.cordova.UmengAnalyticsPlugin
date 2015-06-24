@@ -19,6 +19,19 @@ UmengAnalyticsPlugin.prototype.setDebugMode = function (mode) {
     this.call_native("setDebugMode", [mode], null);
 }
 
+
+UmengAnalyticsPlugin.prototype.onEventCounter = function (eventId, key) {
+    this.call_native("onEventCounter", [eventId, key], null);
+}
+
+UmengAnalyticsPlugin.prototype.onEvent = function (eventId, map) {
+    this.call_native("onEvent", [eventId, map], null);
+}
+
+UmengAnalyticsPlugin.prototype.onEventValue = function (eventId, map, du) {
+    this.call_native("onEventValue", [event, map, du], null);
+}
+
 UmengAnalyticsPlugin.prototype.onKillProcess = function () {
     data = []
     this.call_native("onKillProcess", data, null);
